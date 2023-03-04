@@ -28,7 +28,8 @@ jobs:
     needs: [Explore-GitHub-Actions]
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x, 15.x, 16.x, 18.x]
+        # node-version: [10.x, 12.x, 14.x, 15.x, 16.x, 18.x]
+        node-version: [14.x, 15.x, 16.x, 18.x]
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
@@ -63,4 +64,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: getwie/test
+          tags: getwie/test:latest
